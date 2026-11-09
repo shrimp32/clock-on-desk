@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+*.log
+
+# Rust / Tauri
+src-tauri/target
+src-tauri/gen/schemas
+
+# 图标中间产物
+app-icon.png

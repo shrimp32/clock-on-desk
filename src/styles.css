@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: max-content;
+  overflow: hidden;
+  background: transparent;
+}
+
+#root {
+  width: max-content;
+}
+
+body {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.panel {
+  --alpha: 0.45;
+  --scale: 1;
+  --bg: rgba(18, 18, 20, var(--alpha));
+  --fg: rgba(255, 255, 255, 0.95);
+  --muted: rgba(255, 255, 255, 0.52);
+  --border: rgba(255, 255, 255, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  padding: calc(12px * var(--scale)) calc(20px * var(--scale))
+    calc(11px * var(--scale));
+  border: 1px solid var(--border);
+  border-radius: calc(18px * var(--scale));
+  background-color: var(--bg);
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+:root[data-theme="light"] .panel {
+  --bg: rgba(255, 255, 255, var(--alpha));
+  --fg: rgba(20, 20, 22, 0.92);
+  --muted: rgba(20, 20, 22, 0.46);
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(1px * var(--scale));
+}
+
+.time {
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.hm {
+  display: inline;
+  font-size: calc(56px * var(--scale));
+  font-weight: 500;
+  letter-spacing: calc(-1.6px * var(--scale));
+}
+
+.ss {
+  display: inline;
+  margin-left: calc(3px * var(--scale));
+  color: var(--muted);
+  font-size: calc(22px * var(--scale));
+  font-weight: 500;
+  letter-spacing: calc(-0.4px * var(--scale));
+}
+
+.colon {
+  margin-right: calc(1px * var(--scale));
+}
+
+.date {
+  color: var(--muted);
+  font-size: calc(12px * var(--scale));
+  font-weight: 500;
+  letter-spacing: calc(0.6px * var(--scale));
+  white-space: nowrap;
+}
+
+.probe {
+  margin-top: 2px;
+  color: #ff6b6b;
+  font-size: 9px;
+  white-space: nowrap;
+}

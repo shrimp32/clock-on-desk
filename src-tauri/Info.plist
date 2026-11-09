@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- 从启动就是菜单栏代理 App：不占 Dock、不进 Cmd+Tab，
+       也是窗口能被允许留在其他 App 全屏 space 之上的前提 -->
+  <key>LSUIElement</key>
+  <true/>
+</dict>
+</plist>
